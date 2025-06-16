@@ -1,0 +1,226 @@
+import streamlit as st
+import streamlit.components.v1 as components
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+.profile-container {
+  width: 80%;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-info {
+  text-align: left;
+}
+.subtitle {
+  color: gray;
+  font-size: 18px;
+}
+.section {
+  margin-top: 30px;
+}
+.section-title {
+  font-size: 20px;
+  color: black;
+  background-color: rgba(180,0,0,0.2);
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+.skills-list {
+  margin-top: 10px;
+}
+.skill-tag {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 5px 5px 0 0;
+}
+.contact-info {
+  margin-top: 30px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.contact-icon {
+  margin-right: 10px;
+}
+</style>
+</head>
+<body>
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="profile-info">
+      <h1>이준희</h1>
+      <p class="subtitle">재난안전소방학 전공 대학생</p>
+      
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="section-title">🔥소개</h2>
+    <p>안녕하세요! 저는 <span style="color: rgb(236, 22, 22)">재난안전소방학</span>을 전공하는 대학생입니다.<br> 현재는 소방설비기사 (전기, 기계) 자격증을 취득하기 위해 공부를 하고 있습니다. <br>새로운 기술을 배우고 도전하는 것을 즐깁니다.</p>
+  </div>
+  <div class="section">
+    <h2 class="section-title">🛠️보유 기술</h2>
+    <div class="skills-list">
+      <span class="skill-tag">아</span>
+      <span class="skill-tag">직</span>
+      <span class="skill-tag">없</span>
+      <span class="skill-tag">음<span>
+    </div>
+  </div>
+  <div class="section">
+    <h2 class="section-title">📚학력</h2>
+    <p><strong>🏫건양대학교</strong> - 재난안전소방학과 (2020 - 현재)</p>
+  </div>
+  <div class="contact-info">
+    <div class="contact-item">
+      <span class="contact-icon">📧</span>
+      <span>example@email.com</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">📱</span>
+      <span>010-2263-7556</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+"""
+import streamlit as st
+import streamlit.components.v1 as components
+
+import streamlit as st
+import streamlit.components.v1 as components
+
+# 페이지 선택
+page = st.selectbox("📄 페이지 선택", [
+    "1. 소개 및 성장 배경",
+    "2. 성격의 장단점 및 가치관",
+    "3. 학업 및 전공 선택 이유",
+    "4. 경험 및 활동 사항",
+    "5. 진로 목표 및 포부"
+])
+
+# 공통 HTML 스타일
+style = """
+<style>
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #d62828;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.section {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #333;
+    text-align: justify;
+}
+.footer {
+    margin-top: 40px;
+    text-align: right;
+    font-size: 14px;
+    color: #888;
+}
+</style>
+"""
+
+# 페이지별 콘텐츠
+page_contents = {
+    "1. 소개 및 성장 배경": """
+        <div class="container">
+            <div class="title">1. 소개 및 성장 배경</div>
+            <div class="section">
+                안녕하세요. 저는 <strong>이준희</strong>입니다. 전라북도에서 자라나며 공동체와의 협력을 자연스럽게 체득했습니다.<br><br>
+                학창시절 당시에 꿈은 없었지만 소방관의 활약상을 담은 프로그램들을 즐겨보며 ‘누군가를 지키는 사람’에 대한 동경을 키워왔고, 이 관심은 재난안전소방학이라는 진로로 이어졌습니다.<br><br>
+                부모님께서 강조하신 책임감과 정직함은 지금의 저를 만드는 데 중요한 밑거름이 되었고, 끈기와 꾸준함이 제 성장을 이끌고 있습니다.
+            </div>
+            <div class="footer">written by Junhee Lee</div>
+        </div>
+    """,
+
+    "2. 성격의 장단점 및 가치관": """
+        <div class="container">
+            <div class="title">2. 성격의 장단점 및 가치관</div>
+            <div class="section">
+                저는 계획을 세우고 차근차근 수행하는 것을 좋아하는 신중한 성격을 가지고 있습니다.<br><br>
+                조용한 편이지만 맡은 일은 책임감 있게 해내며, 주변 사람들에게는 ‘믿고 맡길 수 있는 사람’으로 평가받습니다.<br><br>
+                단점이라면 가끔 완벽주의 성향으로 인해 일에 몰두하다 피로를 느끼는 경우가 있습니다. 이를 극복하기 위해 <strong>효율적 협업</strong>과 <strong>우선순위 관리</strong>를 꾸준히 연습하고 있습니다.<br><br>
+                저의 핵심 가치관은 ‘<span style="color: #d62828; font-weight: bold;">작은 일에도 진심을 다하자</span>’입니다.
+            </div>
+            <div class="footer">written by Junhee Lee</div>
+        </div>
+    """,
+
+    "3. 학업 및 전공 선택 이유": """
+        <div class="container">
+            <div class="title">3. 학업 및 전공 선택 이유</div>
+            <div class="section">
+                재난 및 안전관리, 구조와 소방 등 <strong>국민의 생명과 재산을 보호하는 역할</strong>에 매력을 느껴 재난안전소방학을 전공하게 되었습니다.<br><br>
+                단순한 이론에 머무르지 않고, 실제 사례를 분석하고 현장 대응 방식을 체계적으로 익히는 학문이라는 점에서 큰 의미를 느끼고 있습니다.<br><br>
+                소방설비기사 (전기, 기계) 자격증을 목표로 꾸준히 공부하고 있으며, <strong>실습 중심의 수업과 자격 과정</strong>을 통해 실무 역량을 다지고 있습니다.
+            </div>
+            <div class="footer">written by Junhee Lee</div>
+        </div>
+    """,
+
+    "4. 경험 및 활동 사항": """
+        <div class="container">
+            <div class="title">4. 경험 및 활동 사항</div>
+            <div class="section">
+                학과 내에서 진행한 재난 시뮬레이션 설계 프로젝트에서 팀장 역할을 맡아, 팀원들과의 협업과 일정 조율을 통해 성공적으로 과제를 완수했습니다.<br><br>
+                이 외에도 다양한 팀 프로젝트와 발표 경험을 통해 문제 해결력과 소통 역량을 키웠습니다.
+            </div>
+            <div class="footer">written by Junhee Lee</div>
+        </div>
+    """,
+
+    "5. 진로 목표 및 포부": """
+        <div class="container">
+            <div class="title">5. 진로 목표 및 포부</div>
+            <div class="section">
+                저의 궁극적인 목표는 <strong>현장에서 국민을 지키는 안전 전문가</strong>가 되는 것입니다.<br><br>
+                재난 현장에서 침착하고 효과적으로 대응할 수 있는 지식과 체력을 갖추는 것은 물론, 스마트 소방 기술, IoT 기반 모니터링 등 첨단 기술과 융합된 분야에도 깊은 관심을 두고 있습니다.<br><br>
+                앞으로도 지속적인 학습과 실무 경험을 통해, <span style="color:#2a9d8f; font-weight:bold;">국민에게 신뢰받는 소방 전문가</span>로 성장하겠습니다.
+            </div>
+            <div class="footer">written by Junhee Lee</div>
+        </div>
+    """
+}
+
+# 최종 렌더링
+components.html(style + page_contents[page], height=750, scrolling=True)
